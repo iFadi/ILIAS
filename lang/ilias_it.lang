@@ -1739,7 +1739,6 @@ assessment#:#tst_postpone_on_desc#:#Le domande senza risposta verranno posticipa
 assessment#:#tst_presentation_properties#:#Impostazioni della presentazione
 assessment#:#tst_presentation_settings_section#:#Presentazione
 assessment#:#tst_previous_access_code_not_available#:#No previous code available!###30 04 2024 new variable
-assessment#:#tst_print#:#Test e valutazione - Anteprima di stampa
 assessment#:#tst_proceed#:#Procedere
 assessment#:#tst_processing_time#:#Tempo massimo di esecuzione
 assessment#:#tst_processing_time_desc#:#Il conteggio del tempo massimo di elaborazione inizia nel momento in cui un utente avvia un test per la prima volta e termina dopo la scadenza del periodo di tempo immesso. Se si utilizza questa opzione, la possibilità di sospendere il test deve essere disattivato (vedere "Impostazioni di sequenza"), in quanto la sospensione della prova non ferma il conto alla rovescia del tempo di elaborazione massimo.
@@ -2574,6 +2573,7 @@ blog#:#blog_whole_blog#:#Whole Blog###31 03 2023 new variable
 book#:#X_reservations_of#:#%s prenotazioni di
 book#:#book_add#:#Aggiungi da gruppo di prenotazione
 book#:#book_add_object#:#Aggiungi oggetto
+book#:#book_add_participant#:#Add Participant###16 12 2025 new variable
 book#:#book_add_schedule#:#Aggiungi programma
 book#:#book_additional_info_file#:#Descrizione aggiuntiva
 book#:#book_all#:#Mostra tutto
@@ -2592,7 +2592,6 @@ book#:#book_booking#:#Booking###30 04 2024 new variable
 book#:#book_booking_information#:#Informazione
 book#:#book_booking_objects#:#Booking Objects###31 03 2023 new variable
 book#:#book_booking_reminders#:#Prossime prenotazioni
-book#:#book_bookings_per_user#:#Bookings per User###31 03 2023 new variable
 book#:#book_bulk_confirmation#:#Please check that all values are listed correctly.###30 04 2024 new variable
 book#:#book_bulk_creation#:#Bulk Creation###30 04 2024 new variable
 book#:#book_bulk_data#:#Item Data###30 04 2024 new variable
@@ -2723,6 +2722,7 @@ book#:#book_show_message#:#Show Message###30 04 2024 new variable
 book#:#book_title_description_nr#:#Title; Description; Number of Units###30 04 2024 new variable
 book#:#book_title_description_nr_info#:#Enter title, description and number of units separated by semicolon or TAB character (if importing from spreadsheet software). Use one line per item.###30 04 2024 new variable
 book#:#book_too_many_preferences#:#Sono state selezionate troppe preferenze. Le preferenze non sono state salvate.
+book#:#book_total_individual_bookings_limit#:#Limit the number of bookings that can be carried out by/for individual participants in total, across all available items. Each bookable item can still only be booked once per participant.###16 12 2025 new variable
 book#:#book_type_warning#:#Attualmente non ci sono oggetti di prenotazione disponibili. Per utilizzare il gruppo di prenotazione è necessario creare oggetti di prenotazione.
 book#:#book_week#:#Week###30 04 2024 new variable
 book#:#book_your_bookings#:#Le Sue prenotazioni
@@ -8737,7 +8737,6 @@ dcl#:#dcl_msg_tableview_created#:#Visualizzazioni create
 dcl#:#dcl_msg_tableview_deleted#:#Visualizzazione eliminata
 dcl#:#dcl_msg_tableview_updated#:#Visualizzazione aggiornata
 dcl#:#dcl_msg_tableviews_delete_all#:#Non può essere eliminata: deve esistere almeno una visualizzazione
-dcl#:#dcl_msg_tableviews_order_updated#:#Ordine delle visualizzazioni aggiornate
 dcl#:#dcl_multiple_selection#:#Selezione multipla
 dcl#:#dcl_new#:#Crea nuova raccolta dati
 dcl#:#dcl_new_field#:#Nuovo campo
@@ -8760,7 +8759,6 @@ dcl#:#dcl_notification_activated#:#Notifica attivata
 dcl#:#dcl_notification_deactivate_dcl#:#Disattiva notifica per raccolta dati
 dcl#:#dcl_notification_deactivated#:#Notifica disattivata
 dcl#:#dcl_notification_info#:#Ogni utente può decidere sulla notifica
-dcl#:#dcl_notimage_exception#:#Il file deve essere un’immagine.
 dcl#:#dcl_noturl_exception#:#Devi inserire un collegamento (a partire da http:// o www.)
 dcl#:#dcl_number#:#Numero intero
 dcl#:#dcl_number_desc#:#Campo per valori interni (massimo 9 cifre). Nessun decimale o frazioni.
