@@ -163,9 +163,18 @@ class EditSubObjectsGUI
         $main_tpl->addOnloadCode("window.setTimeout(() => { il.repository.core.trigger('il-lm-editor-tree'); }, 500);");
     }
 
-    public function insertChapterClipBefore(): void
+    protected function getCurrentParentId(): int
     {
         $parent = $this->sub_obj_id;
+        if ($parent === 0) {
+            $parent = $this->lm_tree->readRootId();
+        }
+        return $parent;
+    }
+
+    public function insertChapterClipBefore(): void
+    {
+        $parent = $this->getCurrentParentId();
         $target_id = $this->request->getTargetId();
         $before_target = \ilTree::POS_FIRST_NODE;
         foreach ($this->lm_tree->getChilds($parent) as $node) {
@@ -354,10 +363,7 @@ class EditSubObjectsGUI
 
     public function insertChapterBefore(): void
     {
-        $parent = $this->sub_obj_id;
-        if ($parent === 0) {
-            $parent = $this->lm_tree->getRootId();
-        }
+        $parent = $this->getCurrentParentId();
         $target_id = $this->request->getTargetId();
         $before_target = \ilTree::POS_FIRST_NODE;
         foreach ($this->lm_tree->getChilds($parent) as $node) {
@@ -403,13 +409,13 @@ class EditSubObjectsGUI
         $ot = \ilObjectTranslation::getInstance($this->lm->getId());
         $ml = "";
         if ($ot->getContentActivated()) {
-            $ml = " (".$lng->txt("meta_l_" .$ot->getMasterLanguage()) . ")";
+            $ml = " (" . $lng->txt("meta_l_" . $ot->getMasterLanguage()) . ")";
         }
 
         $form = $this
             ->gui
             ->form(self::class, "saveTitle")
-            ->text("title", $lng->txt('title') . $ml, "", ilLMObject::_lookupTitle($id));
+            ->text("title", $lng->txt('title') . $ml, "", ilLMObject::_lookupTitle($id), 200);
         if ($ot->getContentActivated()) {
             foreach ($ot->getLanguages() as $lang) {
                 $code = $lang->getLanguageCode();
@@ -418,8 +424,13 @@ class EditSubObjectsGUI
                 }
                 $lmobjtrans = new \ilLMObjTranslation($id, $code);
                 $title = $lmobjtrans->getTitle();
-                $form = $form->text("title_" . $code, $lng->txt('title') . " (" . $lng->txt("meta_l_" . $code) . ")",
-                    "", $title);
+                $form = $form->text(
+                    "title_" . $code,
+                    $lng->txt('title') . " (" . $lng->txt("meta_l_" . $code) . ")",
+                    "",
+                    $title,
+                    200
+                );
             }
         }
         return $form;
