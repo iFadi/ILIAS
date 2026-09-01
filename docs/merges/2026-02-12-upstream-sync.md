@@ -1,5 +1,22 @@
 # Upstream Sync - February 12, 2026
 
+> **CORRECTION (2026-09-01).** Two claims in this document were found to be inaccurate during
+> the fork restructure. The record is kept intact for history; the corrections are:
+>
+> 1. **The ES6 ViewControl refactor is not "our fork's architecture."** The modular JS
+>    (`sortation.js`, `mode.js`, `pagination.js`, `fieldselection.js`, `index.js`,
+>    `jqueryeventdispatcher.js`) arrived **with nhaagen's backport** from `release_11`
+>    (commit `5132b2bb40`). It is upstream code carried back into `release_10`, not a
+>    local invention. The conflict resolution below — keeping the modular version — was
+>    still correct, but the justification "our architecture is superior" should read
+>    "the backport supersedes the inline implementation."
+>
+> 2. **This sync was not committed as a merge.** Commit `2cd1d91781`, titled
+>    `merge: sync with upstream/release_10`, has only **one parent**. Upstream content was
+>    committed as ordinary fork work, severing ancestry with `upstream/release_10`. This is
+>    what later caused git to report 922 commits behind when the true gap was 618.
+>    See `2026-09-01-fork-restructure.md` for the root cause and the fix.
+
 ## Summary
 
 - **Sync Date:** 2026-02-12
